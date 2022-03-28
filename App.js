@@ -11,13 +11,12 @@ import {
   SafeAreaView,
   ScrollView,
   StatusBar,
-  StyleSheet,
-  Text,
   useColorScheme,
   View,
 } from 'react-native';
 
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import Characters from './src/components/Characters';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -38,23 +37,11 @@ const App = () => {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}
         >
-          <Text style={[styles.highlight, styles.sectionTitle]}>
-            Holi, perro
-          </Text>
+          <Characters />
         </View>
       </ScrollView>
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  sectionTitle: {
-    fontSize: 44,
-    fontWeight: '600',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;
